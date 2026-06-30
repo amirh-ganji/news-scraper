@@ -22,5 +22,5 @@ for item in article:
 
 with open('data.csv', 'w', newline='', encoding="utf-8") as file:
     writer = csv.writer(file)
-    writer.writerow(["عنوان خبر", "لینک خبر"]) 
+    writer.writerow(["News title", "News link"]) 
     writer.writerows(title_list)
