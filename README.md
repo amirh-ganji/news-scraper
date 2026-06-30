@@ -1,18 +1,18 @@
 # 📰 Tasnim News Scraper
 
-یک اسکریپت Python برای استخراج خودکار عناوین و لینک‌های اخبار اقتصادی از سایت خبرگزاری تسنیم.
+A Python script for automatic extraction of news titles and links from the economic news section of Tasnim News Agency website.
 
 ---
 
-## 📋 توضیح پروژه
+## 📋 Project Description
 
-این پروژه با استفاده از `requests` و `BeautifulSoup` بخش اخبار اقتصاد سایت تسنیم را پردازش کرده و عنوان و لینک کامل هر مقاله را استخراج می‌کند. سپس اطلاعات استخراج‌شده را در فایل CSV ذخیره می‌نماید.
+This project uses `requests` and `BeautifulSoup` to process the economics section of the Tasnim website and extract the title and full link of each article.
 
 ---
 
-## ⚙️ پیش‌نیازها
+## ⚙️ Prerequisites
 
-قبل از اجرا، کتابخانه‌های مورد نیاز را نصب کنید:
+Before running, install the required libraries:
 
 ```bash
 pip install requests beautifulsoup4
@@ -20,83 +20,83 @@ pip install requests beautifulsoup4
 
 ---
 
-## 🚀 نحوه اجرا
+## 🚀 How to Run
 
 ```bash
 python main.py
 ```
 
-پس از اجرا، فایل `data.csv` در همان مسیر ایجاد می‌شود.
+After execution, the `data.csv` file will be created in the same directory.
 
 ---
 
-## 📁 خروجی
+## 📁 Output
 
-فایل `data.csv` شامل دو ستون است:
+The `data.csv` file contains two columns:
 
 | News title | News link |
 |-----------|----------|
-| عنوان مقاله | https://www.tasnimnews.com/... |
+| Article title | https://www.tasnimnews.com/... |
 
-**مثال:**
+**Example:**
 ```
 News title,News link
-افزایش نرخ دلار,https://www.tasnimnews.com/fa/news/...
-بورس بهبود یافت,https://www.tasnimnews.com/fa/news/...
+Dollar exchange rate increase,https://www.tasnimnews.com/fa/news/...
+Stock market improved,https://www.tasnimnews.com/fa/news/...
 ```
 
 ---
 
-## 🔗 منبع داده
+## 🔗 Data Source
 
-- **سایت:** [خبرگزاری تسنیم](https://www.tasnimnews.com)
-- **بخش:** [اخبار اقتصاد ایران](https://www.tasnimnews.com/fa/service/77/%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86)
+- **Website:** [Tasnim News Agency](https://www.tasnimnews.com)
+- **Section:** [Iran Economy News](https://www.tasnimnews.com/fa/service/77/%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86)
 
 ---
 
-## 📂 ساختار پروژه
+## 📂 Project Structure
 
 ```
 news-scraper/
 │
-├── main.py          # اسکریپت اصلی
-├── data.csv         # خروجی (پس از اجرا ایجاد می‌شود)
-├── README.md        # این فایل
+├── main.py          # Main script
+├── data.csv         # Output (created after running)
+├── README.md        # This file
 └── LICENSE          # MIT License
 ```
 
 ---
 
-## 🔍 نحوه کار
+## 🔍 How It Works
 
-اسکریپت مراحل زیر را انجام می‌دهد:
+The script performs the following steps:
 
-1. **دریافت صفحه:** از طریق `requests` صفحه اخبار اقتصاد را دانلود می‌کند
-2. **تحلیل HTML:** با استفاده از `BeautifulSoup` عناصر مقالات را جستجو می‌کند
-3. **استخراج اطلاعات:** عنوان (h2) و لینک (href) هر مقاله را استخراج می‌کند
-4. **ذخیره در CSV:** اطلاعات را در فایل `data.csv` با کدگذاری UTF-8 ذخیره می‌کند
-
----
-
-## 📝 نکات مهم
-
-- ⚠️ **بازنویسی فایل:** هر بار اجرای اسکریپت، فایل CSV را کاملاً بازنویسی می‌کند (اطلاعات قبلی حذف می‌شود)
-- 🔄 **تغییرات وب‌سایت:** در صورت تغییر ساختار HTML سایت تسنیم، ممکن است نیاز به بروزرسانی CSS selector‌های استفاده‌شده باشد
-- 🌐 **کدگذاری:** فایل خروجی با کدگذاری UTF-8 ذخیره می‌شود
-- 📡 **User-Agent:** در صورت نیاز، می‌توان User-Agent به درخواست اضافه کرد
+1. **Fetch Page:** Downloads the economic news page using `requests`
+2. **Parse HTML:** Searches for article elements using `BeautifulSoup`
+3. **Extract Information:** Extracts the title (h2) and link (href) of each article
+4. **Save to CSV:** Saves the data in `data.csv` file with UTF-8 encoding
 
 ---
 
-## 📜 لایسنس
+## 📝 Important Notes
 
-این پروژه تحت لایسنس MIT منتشر شده است. برای اطلاعات بیشتر به فایل [LICENSE](LICENSE) مراجعه کنید.
+- ⚠️ **File Overwrite:** Each time the script runs, it completely overwrites the CSV file (previous data is deleted)
+- 🔄 **Website Changes:** If the HTML structure of Tasnim website changes, CSS selectors used may need to be updated
+- 🌐 **Encoding:** The output file is saved with UTF-8 encoding
+- 📡 **User-Agent:** If needed, you can add User-Agent to the request
 
 ---
 
-## 💡 پیشنهادات برای بهبود
+## 📜 License
 
-- اضافه کردن تاریخ خبر
-- ذخیره‌سازی تاریخ‌شده برای جلوگیری از حذف اطلاعات
-- مدیریت خطاها (Error Handling)
-- اضافه کردن تأخیر بین درخواست‌ها (Rate Limiting)
-- پشتیبانی از صفحات متعدد
+This project is published under the MIT License. For more information, refer to the [LICENSE](LICENSE) file.
+
+---
+
+## 💡 Suggestions for Improvement
+
+- Add news publication date
+- Implement timestamped storage to prevent data loss
+- Add error handling (Error Handling)
+- Add delay between requests (Rate Limiting)
+- Support for multiple pages
