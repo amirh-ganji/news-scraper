@@ -83,7 +83,8 @@ The script performs the following steps:
 - ⚠️ **File Overwrite:** Each time the script runs, it completely overwrites the CSV file (previous data is deleted)
 - 🔄 **Website Changes:** If the HTML structure of Tasnim website changes, CSS selectors used may need to be updated
 - 🌐 **Encoding:** The output file is saved with UTF-8 encoding
-- 📡 **User-Agent:** If needed, you can add User-Agent to the request
+- 📡 **User-Agent and timeout:** Requests are sent with a User-Agent header and a 15-second timeout
+- ⚖️ **Responsible use:** Respect the website's terms of service and `robots.txt`. This project is for educational purposes
 
 ---
 
@@ -97,6 +98,5 @@ This project is published under the MIT License. For more information, refer to 
 
 - Add news publication date
 - Implement timestamped storage to prevent data loss
-- Add error handling (Error Handling)
 - Add delay between requests (Rate Limiting)
 - Support for multiple pages
